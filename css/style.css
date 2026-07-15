@@ -1,0 +1,470 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/*=====================================
+            GOOGLE FONTS
+======================================*/
+:root {
+    /* Colors */
+    --bg: #030712;
+    --surface: #0F172A;
+    --card: #111827;
+
+    --primary: #8B5CF6;
+    --secondary: #22D3EE;
+
+    --white: #F8FAFC;
+    --text: #CBD5E1;
+    --gray: #94A3B8;
+
+    --border: rgba(255, 255, 255, .08);
+
+    /* Fonts */
+
+    --heading: 'Sora', sans-serif;
+    --body: 'Inter', sans-serif;
+
+    /* Others */
+
+    --radius: 18px;
+    --transition: .35s ease;
+    --shadow: 0 20px 50px rgba(0, 0, 0, .35);
+}
+
+/*=====================================
+              RESET
+======================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--body);
+    overflow-x: hidden;
+}
+
+/*=====================================
+            COMMON
+======================================*/
+.container {
+    width: min(1200px, 90%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+/*=====================================
+            HEADER
+======================================*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(18px);
+    background: rgba(3, 7, 18, .70);
+    border-bottom: 1px solid var(--border);
+}
+
+
+/*=====================================
+            NAVBAR
+======================================*/
+
+.navbar {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: var(--heading);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+    color: var(--gray);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--white);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right,
+            var(--primary),
+            var(--secondary));
+    transition: var(--transition);
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/*=====================================
+            BUTTONS
+======================================*/
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 34px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.primary-btn {
+    color: #fff;
+    background: linear-gradient(135deg,
+            var(--primary),
+            var(--secondary));
+}
+
+.primary-btn:hover {
+    transform:
+        translateY(-8px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(139, 92, 246, .35);
+}
+
+.secondary-btn {
+    border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, .05);
+    transform:
+        translateY(-8px) scale(1.01);
+}
+
+.btn,
+.resume-btn,
+.project-buttons a,
+.certificate-btn a,
+.contact-form button {
+    position: relative;
+    overflow: hidden;
+}
+
+/*=====================================
+            FOOTER
+======================================*/
+footer {
+    padding: 35px 0;
+    text-align: center;
+    /* border-top:1px solid var(--border); */
+    border-top: 1px solid rgba(255, 255, 255, .06);
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/*=====================================
+          CUSTOM SCROLLBAR
+======================================*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a78bfa;
+}
+
+/*=====================================
+        Better Selection Color
+======================================*/
+::selection {
+    background: #8B5CF6;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #8B5CF6;
+    color: #fff;
+}
+
+/*=====================================
+           Better Focus
+======================================*/
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+/*=====================================
+        Better Image Rendering
+======================================*/
+img {
+    max-width: 100%;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/*=====================================
+             Better Scrollbar
+======================================*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #8B5CF6;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+}
+
+/*=====================================
+          Universal Transition
+======================================*/
+a,
+button,
+.card,
+.project-card,
+.skill-card,
+.stat-box,
+.open-card,
+.certificate-card {
+    transition: .35s ease;
+}
+
+/*=====================================
+           Navbar Blur Upgrade
+======================================*/
+header {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/*=====================================
+         Purple Glow on Buttons
+======================================*/
+.btn:hover,
+.resume-btn:hover,
+.project-buttons a:hover,
+.certificate-btn a:hover,
+.contact-form button:hover {
+    box-shadow:
+        0 15px 35px rgba(139, 92, 246, .28);
+}
+
+/*=====================================
+        Better Card Animation
+======================================*/
+.project-card,
+.skill-card,
+.certificate-card,
+.open-card,
+.stat-box {
+    will-change: transform;
+}
+
+/*=====================================
+        SCROLL REVEAL
+======================================*/
+.reveal {
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.reveal {
+    will-change: transform, opacity;
+}
+
+/*=====================================
+        SCROLL PROGRESS BAR
+======================================*/
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    z-index: 9999;
+    background: linear-gradient(90deg,
+            var(--primary),
+            var(--secondary));
+    box-shadow: 0 0 15px rgba(139, 92, 246, .45);
+}
+
+/*=====================================
+        SCROLL TO TOP
+======================================*/
+#scrollTopBtn {
+    position: fixed;
+    right: 28px;
+    bottom: 28px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    background: linear-gradient(135deg,
+            var(--primary),
+            var(--secondary));
+    box-shadow: 0 12px 30px rgba(139, 92, 246, .25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: .35s;
+    z-index: 999;
+}
+
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+    transform:
+        translateY(-8px) scale(1.01);
+    box-shadow: 0 18px 35px rgba(139, 92, 246, .35);
+}
+
+nav ul li a {
+    position: relative;
+    padding: 8px 0;
+    transition: .35s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            var(--primary),
+            var(--secondary));
+    transition: .35s;
+    border-radius: 10px;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--secondary);
+}
+
+.logo {
+    transition: .35s;
+}
+
+.logo:hover {
+    transform: scale(1.08) rotate(.4deg);
+    text-shadow: 0 0 18px rgba(139, 92, 246, .5);
+}
+
+/*=====================================
+        PAGE FADE
+======================================*/
+body {
+    animation: pageFade .6s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+button:active,
+.btn:active,
+.project-buttons a:active,
+.resume-btn:active {
+    transform: scale(.97);
+}
+
+
