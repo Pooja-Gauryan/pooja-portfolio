@@ -1,0 +1,162 @@
+/*=====================================
+            ABOUT PAGE
+======================================*/
+.about-page {
+    min-height: 100vh;
+    padding: 140px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+/*=====================================
+        BACKGROUND GLOW
+======================================*/
+.about-page::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #8B5CF6;
+    border-radius: 50%;
+    filter: blur(170px);
+    opacity: .15;
+    top: -120px;
+    left: -120px;
+}
+
+.about-page::after {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #22D3EE;
+    border-radius: 50%;
+    filter: blur(170px);
+    opacity: .12;
+    bottom: -120px;
+    right: -120px;
+}
+
+/*=====================================
+            PAGE TITLE
+======================================*/
+.page-title {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+.page-title span {
+    color: var(--secondary);
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.page-title h1 {
+    margin: 18px 0;
+    font-size: 58px;
+    line-height: 1.2;
+    font-family: var(--heading);
+}
+
+.page-title p {
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+/*=====================================
+            GRID
+======================================*/
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .9fr;
+    gap: 70px;
+    align-items: start;
+}
+
+/*=====================================
+            LEFT
+======================================*/
+.about-left h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+    font-family: var(--heading);
+}
+
+.about-left p {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 2;
+    margin-bottom: 22px;
+}
+
+/*=====================================
+            RIGHT
+======================================*/
+.about-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+/*=====================================
+            INFO CARD
+======================================*/
+.info-card {
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 28px;
+    transition: .35s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, .18);
+}
+
+.info-card h3 {
+    color: var(--secondary);
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.info-card p {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.info-card span {
+    color: var(--gray);
+    font-size: 15px;
+}
+
+/*=====================================
+        RESPONSIVE
+======================================*/
+@media(max-width:992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    .page-title h1 {
+        font-size: 46px;
+    }
+}
+
+@media(max-width:600px) {
+    .about-page {
+        padding-top: 120px;
+    }
+    .page-title h1 {
+        font-size: 36px;
+    }
+    .about-left h2 {
+        font-size: 30px;
+    }
+}
